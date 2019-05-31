@@ -1,0 +1,32 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+t=np.linspace(-5*m.pi,5*m.pi,100)
+a=np.sin(t)
+b=np.cos(t)
+
+
+fig = plt.figure()
+fig.suptitle('2. zadatak')
+ax = fig.add_subplot(221)
+ax.set_ylabel('sin')
+line_up, = plt.plot(t,a,'g--', label='sixxn')
+plt.legend(handles=[line_up])
+axes = plt.gca()
+axes.set_xlim(-18,18)
+axes.set_ylim(-2,2)
+
+ax = fig.add_subplot(222)
+line_up, = plt.plot(t,b,'r--', label='cos')
+plt.legend(handles=[line_up])
+axes = plt.gca()
+axes.set_xlim(-18,18)
+axes.set_ylim(-2,2)
+
+ax=fig.add_subplot(212)
+axes = plt.gca()
+axes.set_xlim(-18,18)
+axes.set_ylim(-2,2)
+line_up, = plt.plot(t,a, 'r', label='sin')
+line_down, = plt.plot(t,b, 'b', label='cos')
+plt.legend(handles=[line_up, line_down], loc=1)

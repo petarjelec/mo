@@ -1,0 +1,52 @@
+import numpy as np
+'''Generirati matricu A dimenzija 4x5 sa slucajno odabranim
+brojevima od 0 do 100 '''
+a = np.random.rand(4,5)*10
+'''zaokružiti svaki element na cijeli broj'''
+A = np.fix(a)
+print (A)
+print('\n')
+'''Potencirati svaki element matrice potencijom 2'''
+POT_A = A*A
+print (POT_A)
+print('\n')
+'''Generirati matricu B dimenzija 3x5 sa slucajno odabranim
+brojevima od 1 do 10'''
+b = np.random.rand(3,5)*10
+'''zaokružiti svaki element na cijeli broj'''
+B = np.fix(b);
+print('B')
+print('\n')
+print(B)
+print('\n')
+
+'''dopuniti matricu B nulama kako bi se matrice mogle pomnožiti'''
+B=np.insert(B,3,np.zeros((1,5)),axis=0) #dodat jedan redak
+
+print (B)
+print('\n')
+
+'''Pomnožiti matrice A i B i rezultat spremiti u varijablu
+"rezultat"'''
+rezultat=A*B
+print(rezultat)
+print('\n')
+
+'''Svaki element u dobivenoj matrici povecati za 2'''
+rezultat=rezultat+2;
+'''U prvi redak rezultata postaviti sve nule umjesto postojecih
+elemenata'''
+rezultat[0,:]=0
+
+
+print (rezultat)
+print('\n')
+a=np.transpose(rezultat)
+'''Transponirati dobivenu matricu rezultat'''
+a = rezultat.transpose();
+print('transponirana')
+print('\n')
+print(a)
+print('\n')
+b=np.sum(rezultat, axis=1);
+print(b);

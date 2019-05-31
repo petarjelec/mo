@@ -1,0 +1,25 @@
+import math
+def secant_method(f, df, x0, x1, x=5, e=0.1):
+    def call (f, x):
+        return eval(f)
+    x = x0
+    x0 = math.inf
+    n = 1
+    df_x1 = call(df, x1)
+    while abs(x-x0) > e:
+        n += 1
+        x0 = x
+        df_x0 = call(df, x0)
+        x = x0-df_x0*(x0-x1)/(df_x0-df_x1)
+        df_x1 = df_x0
+        x1 = x0
+        print('Ekstremna vrijednost je: ', x)
+        print('Funkcija u ekstremnoj vrijednosti je: ', call(f, x))
+        print('Rješenje je pronadeno u %d interacija' % n)
+f=input('Unesite funkciju:')
+df=input('Unesite derivaciju funkcije:')
+x0=input('Unesite donju granicu intervala:')
+x0=float(x0)
+x1=input('Unesite gornju granicu intervala:')
+x1=float(x1)
+secant_method(f, df, x0, x1, x=5, e=0.1)

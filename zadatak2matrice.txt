@@ -1,0 +1,53 @@
+import numpy as np
+import matplotlib.pyplot as plt
+import math as m
+A=np.ones((4,4))
+A=A/2
+print(A)
+print('\n')
+B=4.5*np.eye(4,4)
+print(B)
+X=A+B
+print('\n')
+print('X')
+print(X)
+
+
+Y=2*np.ones((5,5))
+Y[0,:]=5
+Y[4,:]=5
+
+Y[:,0]=5
+Y[:,4]=5
+print('\n')
+print('Y')
+print(Y)
+
+print('X')
+
+
+X=np.insert(X,4,np.zeros((1,4)),axis=1)
+X=np.insert(X,4,np.zeros((1,5)),axis=0)
+
+
+print('\n')
+print(X)
+Z=np.dot(X,Y)
+print('\n')
+print(Z)
+
+Z=Z*Z
+print('\n')
+print(Z)
+
+A = Z[:,0:5:2]
+print(A)
+
+suma = np.sum(A)
+A[2,1]=suma
+print(A)
+
+
+
+
+

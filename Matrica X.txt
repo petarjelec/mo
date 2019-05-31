@@ -1,0 +1,28 @@
+import numpy as np 
+
+X= np.ones((8,8))*8
+np.fill_diagonal(X,5)
+print (X)
+print('\n')
+X=np.fliplr(X)
+print (X)
+print('\n')
+np.fill_diagonal(X,5)
+print (X)
+print('\n')
+
+Y=X[:,:]+2
+print(Y)
+print('\n')
+Z=np.delete(Y,(0,7), axis=0)
+print (Z)
+print('\n')
+a=np.concatenate((X,Z),axis=0)
+print (a)
+print('\n')
+print(np.shape(a))
+suma=np.sum(a,axis=0)
+print (suma)
+print('\n')
+a=np.insert(a,14,suma*np.ones((1,8)),axis=0)
+print(a)

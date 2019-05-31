@@ -1,0 +1,19 @@
+import numpy as np
+def newton_method(f, df1, df2, a, tol):
+x=np.inf
+n=0
+while abs(x-a)> tol:
+x=a
+a = x - eval(df1)/eval(df2)
+n=n+1
+print ('Ekstrem je u tocci: ', x)
+print ('Vrijednost funckije u toj tocci je: ', eval(f))
+print ('Ekstrem je pronadjen u %d iteracija' % n)
+f=input('Unesite funkciju:')
+df1=input('Unesite derivaciju funkcije:')
+df2=input('Unesite drugu derivaciju funkcije:')
+tol=input('Unesite toleranciju:')
+tol=float(tol)
+a=input('Unesite gornju granicu intervala:')
+a=float(a)
+newton_method(f,df1,df2,5,tol)

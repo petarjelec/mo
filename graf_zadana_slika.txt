@@ -1,0 +1,39 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+a=np.linspace(-10,10,20)
+y=([-1,1,-1,1,-1,1,-1,1,-1,1,-1,1,-1,1,-1,1,-1,1,-1,1])
+z=[1,-1,1,-1,1,-1,1,-1,1,-1,1,-1,1,-1,1,-1,1,-1,1,-1]
+
+plt.style.use('default')
+fig=plt.figure()
+fig.suptitle('zadatak')
+ax=fig.add_subplot(611)
+axes=plt.gca()
+axes.set_ylim(-2,2)
+axes.set_xlim(-11,11)
+line_up, = plt.plot(a,y,'r--', label='y')
+plt.legend(handles=[line_up])
+plt.legend(bbox_to_anchor=(1.25,1))
+
+fig=plt.figure()
+fig.suptitle('zadatak')
+ax=fig.add_subplot(611)
+axes=plt.gca()
+axes.set_ylim(-2,2)
+axes.set_xlim(-11,11)
+line_down, = plt.plot(a,z,'g--', label='z')
+plt.legend(handles=[line_down])
+plt.legend(bbox_to_anchor=(1.25,1))
+
+
+fig=plt.figure()
+fig.suptitle('zadatak')
+ax=fig.add_subplot(611)
+axes=plt.gca()
+axes.set_ylim(-2,2)
+axes.set_xlim(-11,11)
+line_up, = plt.plot(a,y,'r--', label='y')
+line_down, = plt.plot(a,z,'g--', label='z')
+plt.legend(handles=[line_up,line_down])
+plt.legend(bbox_to_anchor=(1.25,1))
