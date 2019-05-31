@@ -1,0 +1,52 @@
+NELINEARNO PROGRAMIRANJE - Skup postupaka optimizacije (odredivanja ekstremne vrijednosti funkcije, odnosno minimuma ili maksimuma) s nelinearnim funkcijama cilja i/ili ogranicenja
+Cesto nastaju u prirodnim znanostima i inženjerstvu (npr. velicina populacije je nelinearna funkcija stope mortaliteta i nataliteta
+Priroda funkcije cilja i ogranicenja cesto onemogucava optimizaciju korištenjem analitickih metoda. U takvim se slucajevima koriste metode traženja koje uvjetuju samo mogucnost izracunavanja vrijednosti funckije cilja na osnovu aktualnih vrijednosti varijabII
+JEDNODIMENZIONALNA OPTIMIZACIJA: Numericko i analiticko rjesavanje, NUMERICKO: Gradijentne metode,Metode direktnog pretrazivanja, Metode aproksimacijom polinoma, GRADIJENTNE: Newton-Rapshonova i Metoda sekante, METODE DIREKTNOG PRETRAZIVANJA: Fibonnacijeva metoda i metoda zlatnog reza
+FIBONACCI:
+Jedan od nedostataka Fibonaccijeve metode sastoji se u tome da se odredi broj iteracija n koji garantira da tocka optimuma leži unutar željenog intervala. Da bi to izbjegli, stavljamo da je odnos:
+???? /????+2 ˜ ?? = 3- sqrt(5)/ 2 = 0.38197
+KUBNA METODA
+Optimum uvijek leži u [??1, ??2] • Brža je od metode parabole, ali zahtjeva više racunarskih operacija (stupanj konvergencije je superlinearan) •Minimum y(x) na intervalu [??1, ??2] može se racunati direktno
+METODA PARABOLE
+Osnovna ideja metoda sproksimacije polinomom je: Funkcija se aproksimira polinomom y(x) na intervalu I koji sadrži optimum, odredi se minimum min y(x)=xopt, u okolini xopt se formira novi interval (manji od prethodnog) i vrši se nova aproksimacija.
+METODA DIREKTNOG PRETRAZIVANJA
+Metode direktnog pretraživanja su u osnovi metode jednodimenzionalne optimizacije. • Smatraju ih „kralježnicom” nelinearnih optimizacijskih algoritama. • Svode se na pretraživanje zatvorenog intervala. Cesto pretpostavljamo da je funkcija unimodalna. Uvjet unimodalnosti 
+
+NEWTON-RAPSHONOVA METODA
+Ako možemo izracunati vrijednosti funkcije f  i vrijednosti derivacije funkcije f  i ako znamo neki ???? koji je blizu traženog korijena, možemo nelinearnu funkciju f u okolini tocke (?? , f(???? )) zamijeniti pravcem najslicnijim toj funkciji – tangentom…… f(x)˜f(??0)+ f’(??0)(x-??0) – postupak se iterativno ponavlja
+Osnovna ideja: pronaci stacionarne tocke funkcije za koje vrijedi da je f’(x)=0
+•U Newtonovoj metodi koristimo tangentu u tocci ??0 kao aproksimaciju funkcije f. •Ako ne znamo derivaciju f’ funkcije f, ili se ona teško racuna, možemo tangentu aproksimirati sekantom kroz dvije startne tocke ??0 i ??1. 
+??'(??0)˜ ?? ??1 -?? (??0) /??1-??0 = f[??0, ??1] 
+•Tako dobivamo metodu sekante. •Ideja metode sekante je povuci sekantu grafa funkcije f kroz tocke (??0, f(??0)) i (??1, f(??1)) i definirati novu aproksimaciju ??2. •Postupak ponavljamo povlacenjem sekante kroz dvije posljednje tocke (??1, f(??1)) i (??2, f(??2)) i tako redom.
+
+METAHEURISTIKE - Mravlji algoritmi; - Algoritam roja cestica; - Optimizacija simuliranim kaljenjem; - Genetski algoritam.
+FIBONACCI ALGORITAM
+1. Odrediti interval [??0, ??0] (??0 < ??0), koji sadrži tocku x* i specificirati rezoluciju – tocnost aproksimacije e>0. 
+2. Odrediti najmanji prirodan broj n koji zadovoljava uvjet: ????+1=( 1/ ?? )(??0 - ??0) = ????+2 
+3. Izracunati prvi interval: ??1 = ??0 + (????/ ????+2) (??0 - ??0) ??2 = ??0 + ??0 - ??1
+ 4. Odrediti ƒ(??1) i ƒ(??2) pa napraviti novi set tocaka ??1 i ??1 po principu: 
+Ako je ƒ(??1) = ƒ(??2) tada eliminiramo ?? > ??2 ?? ?? = ??2 Ako je ƒ(??1) > ƒ(??2) tada eliminiramo ?? < ??1 ?? ?? = ??1 Ako je ƒ(??1) = ƒ(??2) tada biramo novi par tocaka 
+5. Izracunati k-ti interval i ponavljati postupak (korak 3) sve do k=n
+
+
+
+
+METODA ZLATNOG REZA
+1. Odrediti interval [??0, ??0] (??0 < ??0), koji sadrži tocku x* i specificirati rezoluciju – tocnost aproksimacije e>0. 
+2. Izracunati: c =(3-korijen(5)) /2 = 0.38197 
+3. Izracunati prvi interval: ??1 = ??0 + ?? (??0 - ??0)       ??2 = ??0 + ??0 - ??1 
+4. Odrediti ƒ(??1) i ƒ(??2) pa napraviti novi set tocaka ??1 i ??1 po principu: 
+Ako je ƒ(??1) = ƒ(??2) tada eliminiramo ?? > ??2 ?? ?? = ??2 Ako je ƒ(??1) > ƒ(??2) tada eliminiramo ?? < ??1 ?? ?? = ??1 Ako je ƒ(??1) = ƒ(??2) tada biramo novi par tocaka 
+5. Izracunati k-ti interval i ponavljati postupak (korak 3) sve do k=n
+ALGORITAM  metoda PARABOLE
+1. Traže se tri tocke ??1, ??2, ??3 tako da je ??1 < ??2 < ??3 i tada je ??1 < ?? * < ??3 
+2. Riješi se sustav jednadžbi po a, b, c ?? + ????1 + ????1 **2 = ??(??1), ?? + ????2 + ????2** 2 = ??(??2),  ?? + ????3 + ????3 **2 = ??(??3) 
+3. Uvjet minimuma parabole: y’(x)=0 da je: ???????? = -??/ 2?? 
+4. Sada ???????? i dvije susjedne tocke od ??1, ??2, ??3 formiraju novu trojku i postupak se nastavlja. Potrebno je usporediiti ???????? i ??2 - manja od njih dvije je nova ??2, a tocke lijevo i desno cine ??1 i ??3.
+ 5. Postupak se prekida kada je: ?? (???????? )- ?? (???????? )= ?
+ALGORITAM KUBNA METODA
+1. Aproksimira f(x) polinomom treceg reda y ?? = ?? + ???? + ????**2 + ???? **3,  ?? ' ??1 < 0 ?? ' ??2 > 0 ??1 < ??2
+
+2. Koeficijenti se mogu odrediti na dva nacina: 1. Poznavanjem f(x) u 4 tocke 2. Poznavanjem f(x) i f’(x) u 2 tocke ?? + ?????? + ?????? **2 + ?????? **3 = ?? ???? ?? = 1,2, … ?? + 2?????? + 3??????** 2 = ?? ' ???? ?? = 1,2, … 
+3. Kod rješavanja ?? ' ?? = 0 dobivaju se dva rješenja, a uzima se ono koje leži u intervalu [??1, ??2]i ima manju vrijednost (za minimum) 1. Ako je ?? ' ???????? < 0, ??1 = ???????? 2. Inace ??2 = ???????? 
+4. Postupak se prekida kada je: ?? (???????? )- ??(????????) = ? 
